@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portal Logístico Integral</title>
+    <link rel="stylesheet" href="styles.css">
+    <!-- Iconos de FontAwesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+
+BARRA DE NAVEGACIÓN SUPERIOR CON BOTONES INTERACTIVOS
+    <header class="navbar">
+        <div class="nav-container">
+            <div class="logo">
+                <i class="fa-solid fa-truck-fast"></i>
+                <span>Logística<strong>AR</strong></span>
+            </div>
+        Menú superior en formato de pestañas
+            <nav class="nav-links">
+                <button class="tab-btn active" onclick="mostrarSeccion('recepcion')">Recepción</button>
+                <button class="tab-btn" onclick="mostrarSeccion('rastreo')"> Rastreo</button>
+                <button class="tab-btn" onclick="mostrarSeccion('inventario')">Stock</button>
+                <button class="tab-btn" onclick="mostrarSeccion('kpis')">KPIs</button>
+                <button class="tab-btn" onclick="mostrarSeccion('sucursales')"> Sucursales</button>
+                <button class="tab-btn" onclick="mostrarSeccion('tarifas')">Tarifas</button>
+                <button class="tab-btn" onclick="mostrarSeccion('contacto')"><i class="fa-solid fa-envelope"></i> Contacto</button>
+            </nav>
+        </div>
+    </header>
+
+   
+
+    <section id="inicio" class="hero-section">
+        <div class="hero-with-image">
+            <div class="hero-image-container">
+                <img src="logisticaimg.jfif" alt="Centro Logístico Intermodal" class="hero-generated-image">
+            </div>
+            <div class="hero-content">
+                <h1>Portal de Gestión y Logística Central</h1>
+                <p>Plataforma estandarizada para el control de inventarios, recepción de mercadería y seguimiento satelital de flotas en la cadena de suministro, diseñada para la máxima eficiencia.</p>
+                <div class="hero-buttons">
+                    <button class="btn-primary" onclick="mostrarSeccion('rastreo')"><i class="fa-solid fa-magnifying-glass"></i> Rastrear Envíos</button>
+                    <button class="btn-secondary" onclick="mostrarSeccion('recepcion')"><i class="fa-solid fa-clipboard-list"></i> Ver Reportes</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+CONTENIDO PRINCIPAL INTERACTIVO
+    <main class="main-container">
+
+    SECCIÓN 1:RECEPCIÓN
+        <section id="recepcion" class="card-section tab-content active-content">
+            <div class="section-header">
+                <h2>Informe Diario de Recepción CD Central</h2>
+                <span class="badge">Turno Mañana</span>
+            </div>
+            <p>Los camiones ingresaron dentro de la ventana horaria establecida (06:00 - 10:00 hs). Se recepcionó un total de 45 tarimas en estado óptimo, previa verificación visual de embalaje y sellos de seguridad.</p>
+            
+            <div class="grid-2-cols" style="margin-top: 20px;">
+                <div class="info-box">
+                    <h3><i class="fa-solid fa-box"></i> Tipos de Mercadería Ingresada</h3>
+                    <ul>
+                        <li>Electrónica</li>
+                        <li>Alimentos Perecederos</li>
+                        <li>Indumentaria</li>
+                        <li>Repuestos</li>
+                    </ul>
+                </div>
+                <div class="info-box">
+                    <h3><i class="fa-solid fa-list-check"></i> Protocolo de Control de Calidad</h3>
+                    <ol>
+                        <li>Verificación de la documentación y remito de carga.</li>
+                        <li>Inspección física del estado de pallets y embalajes.</li>
+                        <li>Control de temperatura en unidades refrigeradas y escaneo de SKU.</li>
+                    </ol>
+                </div>
+            </div>
+        </section>
+
+SECCIÓN 2:RASTREO
+        <section id="rastreo" class="card-section highlight-section tab-content">
+            <div class="section-header">
+                <h2>Rastreo de Envíos en Tiempo Real</h2>
+            </div>
+            <p>Consulte el estado actual de su carga ingresando el código de seguimiento provisto en la guía de despacho.</p>
+            
+            <form action="#" method="GET" class="form-rastreo-inline">
+                <div class="input-group">
+                    <i class="fa-solid fa-barcode"></i>
+                    <input type="text" placeholder="Ej: TRK-984210" required>
+                </div>
+                <button type="submit" class="btn-primary"><i class="fa-solid fa-search"></i> Consultar Envío</button>
+            </form>
+        </section>
+
+SECCIÓN 3:CONTROL DE STOCK
+        <section id="inventario" class="card-section tab-content">
+            <div class="section-header">
+                <h2>Control de Stock y Ubicación en Almacén</h2>
+            </div>
+            <div class="table-responsive">
+                <table class="tabla-logistica">
+                    <thead>
+                        <tr>
+                            <th>SKU</th>
+                            <th>Producto</th>
+                            <th>Ubicación</th>
+                            <th>Stock</th>
+                            <th>Estado</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>SKU-1001</td>
+                            <td>Teclados Mecánicos</td>
+                            <td>Pasillo A - Rack 3</td>
+                            <td>45</td>
+                            <td><span class="status-normal">Normal</span></td>
+                        </tr>
+                        <tr class="row-critico">
+                            <td>SKU-1002</td>
+                            <td>Monitores 24"</td>
+                            <td>Pasillo B - Rack 1</td>
+                            <td>5</td>
+                            <td><span class="status-critico">Crítico</span></td>
+                        </tr>
+                        <tr>
+                            <td>SKU-1003</td>
+                            <td>Aceite Motor 5W30</td>
+                            <td>Pasillo C - Rack 5</td>
+                            <td>120</td>
+                            <td><span class="status-normal">Normal</span></td>
+                        </tr>
+                        <tr class="row-critico">
+                            <td>SKU-1004</td>
+                            <td>Filtros de Aire</td>
+                            <td>Pasillo C - Rack 2</td>
+                            <td>8</td>
+                            <td><span class="status-critico">Crítico</span></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+
+SECCIÓN 4: KPIS
+        <section id="kpis" class="card-section tab-content">
+            <div class="section-header">
+                <h2>Indicadores de Gestión (KPIs)</h2>
+            </div>
+            <div class="kpi-container">
+                <div class="kpi-card">
+                    <i class="fa-solid fa-truck"></i>
+                    <div>
+                        <h4>Envíos Realizados</h4>
+                        <p class="kpi-numero">1,240</p>
+                    </div>
+                </div>
+                <div class="kpi-card">
+                    <i class="fa-solid fa-clock"></i>
+                    <div>
+                        <h4>Tiempo Promedio Carga</h4>
+                        <p class="kpi-numero">42 min</p>
+                    </div>
+                </div>
+                <div class="kpi-card">
+                    <i class="fa-solid fa-boxes-stacked"></i>
+                    <div>
+                        <h4>Ocupación de Depósito</h4>
+                        <p class="kpi-numero">88%</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    SECCIÓN 5:SUCURSALES
+        <section id="sucursales" class="card-section tab-content">
+            <div class="section-header">
+                <h2>Centros Logísticos</h2>
+            </div>
+            <div class="grid-3-cols">
+                <div class="tarjeta-servicio">
+                    <div class="card-icon"><i class="fa-solid fa-building"></i></div>
+                    <h3>CEDI Zarate Buenos Aires</h3>
+                    <p>Operaciones troncales, cross-docking y distribución de cargas nacionales e internacionales.</p>
+                </div>
+                <div class="tarjeta-servicio">
+                    <div class="card-icon"><i class="fa-solid fa-mountain-city"></i></div>
+                    <h3>Nodo Logístico Cuyo</h3>
+                    <p>Centro de almacenamiento intermedio optimizado para corredores cordilleranos.</p>
+                </div>
+                <div class="tarjeta-servicio">
+                    <div class="card-icon"><i class="fa-solid fa-ship"></i></div>
+                    <h3>Terminal Portuaria Litoral-Rosario</h3>
+                    <p>Gestión aduanera, consolidación de contenedores y depósito fiscal directo.</p>
+                </div>
+            </div>
+        </section>
+
+    SECCIÓN 6: TARIFAS 
+        <section id="tarifas" class="card-section tab-content">
+            <div class="section-header">
+                <h2>Tabla Comparativa de Costos</h2>
+            </div>
+            <div class="table-responsive">
+                <table class="tabla-logistica">
+                    <thead>
+                        <tr>
+                            <th>Tramo / Corredor</th>
+                            <th>Servicio</th>
+                            <th>Costo Base (hasta 10kg)</th>
+                            <th>Excedente x Kg</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Corredor Centro - Buenos Aires</td>
+                            <td>Standard (Ftl/Ltl)</td>
+                            <td>$15,000</td>
+                            <td>$1,200</td>
+                        </tr>
+                        <tr>
+                            <td>Corredor Litoral / Rosario</td>
+                            <td>Térmico / Refrigerado</td>
+                            <td>$22,500</td>
+                            <td>$1,800</td>
+                        </tr>
+                        <tr>
+                            <td>Conexión Internacional Cuyo</td>
+                            <td>Aduana / Contenedor</td>
+                            <td>$38,000</td>
+                            <td>$2,500</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+
+    NUEVA SECCIÓN 7: FORMULARIO DE CONTACTO LOGÍSTICO 
+        <section id="contacto" class="card-section tab-content">
+            <div class="section-header">
+                <h2>Contacto y Soporte Operativo</h2>
+            </div>
+            <p>Complete el siguiente formulario para comunicarse directamente con el departamento de logística de transporte.</p>
+            
+            <form action="#" method="POST" class="form-contacto">
+                <div class="grid-2-cols">
+                    <div class="form-group">
+                        <label for="nombre">Nombre y Apellido:</label>
+                        <input type="text" id="nombre" name="nombre" placeholder="Ej: Martina Skeich" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Correo Electrónico:</label>
+                        <input type="email" id="email" name="email" placeholder="contacto@empresa.com" required>
+                    </div>
+                </div>
+
+                <div class="grid-2-cols">
+                    <div class="form-group">
+                        <label for="motivo">Motivo de Consulta:</label>
+                        <select id="motivo" name="motivo">
+                            <option value="seguimiento">Seguimiento de Carga / Remito</option>
+                            <option value="presupuesto">Solicitud de Cotización / Tarifas</option>
+                            <option value="incidencia">Reportar Incidencia en Recepción</option>
+                            <option value="otro">Otro Requerimiento</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="telefono">Teléfono / Celular:</label>
+                        <input type="tel" id="telefono" name="telefono" placeholder="+54 9 11 1234-5678">
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="mensaje">Mensaje o Detalle del Requerimiento:</label>
+                    <textarea id="mensaje" name="mensaje" rows="4" placeholder="Escriba aquí los detalles de su solicitud..." required></textarea>
+                </div>
+
+                <button type="submit" class="btn-primary" style="margin-top: 10px;"><i class="fa-solid fa-paper-plane"></i> Enviar Mensaje</button>
+            </form>
+        </section>
+
+    </main>
+
+    <!-- PIE DE PÁGINA -->
+    <footer class="footer">
+        <p> 2026 Portal Logístico - Tecnicatura Superior en Logística i.s.f.dytn 126</p>
+    </footer>
+
+    <!-- SCRIPT JAVASCRIPT PARA CONTROLAR LAS PESTAÑAS Y HACER SCROLL SUAVE -->
+    <script>
+        function mostrarSeccion(idSeccion) {
+            // Ocultar todas las secciones
+            const secciones = document.querySelectorAll('.tab-content');
+            secciones.forEach(sec => sec.classList.remove('active-content'));
+
+            // Desactivar todos los botones del menú
+            const botones = document.querySelectorAll('.nav-links .tab-btn');
+            botones.forEach(btn => btn.classList.remove('active'));
+
+            // Activar la sección elegida
+            const seccionDestino = document.getElementById(idSeccion);
+            seccionDestino.classList.add('active-content');
+
+            // Marcar botón activo según la sección elegida
+            event.currentTarget.classList.add('active');
+
+            // Desplazar la pantalla suavemente hacia el contenido
+            seccionDestino.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }
+    </script>
+
+</body>
+</html>
